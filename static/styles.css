@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+html {
+  font-size: 62.5%; /* Sets the base font size to 10px for easier rem calculations */
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+body {
+  font-size: 1.6rem; /* Sets the base font size to 16px */
+  background: rgb(244, 244, 244); /* Sets the background color of the body */
+  font-family: "Poppins", sans-serif; /* Sets the default font family */
+}
+
+.navbar {
+  padding: 2rem 1rem; /* Adds padding inside the navbar */
+  margin: 1rem 0; /* Adds margin outside the navbar */
+  border: none; /* Removes the border */
+  background-color: transparent; /* Makes the background transparent */
+}
+
+nav img {
+  width: 8rem; /* Sets the width of the images in the navigation bar */
+}
+
+.navbar ul {
+  display: flex; /* Displays the list items in a flex container */
+  justify-content: space-around; /* Spaces items evenly with space around them */
+  gap: 3rem; /* Adds a gap between flex items */
+  list-style: none; /* Removes the bullet points from the list */
+  margin: 0; /* Removes the margin */
+  padding: 0; /* Removes the padding */
+  border: none; /* Removes the border */
+  background-color: transparent; /* Makes the background transparent */
+}
+
+.navbar ul li a {
+  text-decoration: none; /* Removes underline from the links */
+  color: #0056b3; /* Sets the text color */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  position: relative; 
+  font-size: 1.1em; /* Sets the font size */
+  font-weight: 700; /* Makes the font bold */
+  margin-left: 30px; /* Adds a margin to the left of the links */
+}
+
+.navbar ul li a:hover {
+  color: #0056; /* Changes the color on hover */
+}
+
+.cover {
+  background-color: #fff; /* Sets the background color to white */
+  border-radius: 5px; /* Rounds the corners of the element */
+  border: #333 1px solid; /* Adds a solid border with a color */
+  padding: 10rem; /* Adds padding inside the element */
+}
+
+.footer {
+  background: #333; /* Sets the background color of the footer */
+  height: 5cm; /* Sets the height of the footer */
+  display: flex; /* Displays the footer content in a flex container */
+  gap: 1rem; /* Adds a gap between flex items */
+  flex-direction: column; /* Aligns items in a column */
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  padding: 0; /* Removes the padding */
+}
+
+.footer ul {
+  align-self: stretch; /* Stretches the list to fill the available space */
+  list-style: none; /* Removes bullet points from the list */
+  display: flex; /* Displays the list items in a flex container */
+  justify-content: space-evenly; /* Spaces items evenly with equal space between them */
+}
+
+.footer-img {
+  margin-top: 1.5cm; /* Adds a top margin to the image container */
+  max-height: 80%; /* Ensures the image container doesn't exceed 80% of the footer height */
+  width: auto; /* Maintains the aspect ratio */
+  display: flex; /* Displays the image in a flex container */
+  justify-content: center; /* Centers the image horizontally */
+}
+
+.footer-img img {
+  max-height: 100%; /* Ensures the image scales to fit within the container */
+  width: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the image fits within the container */
+}
+
+.copyright {
+  text-align: center; /* Centers the text */
+  color: #c0bdbd; /* Sets the text color */
+}
+
+.footer ul li a {
+  text-decoration: none; /* Removes underline from the links */
+  color: white; /* Sets the text color */
+  text-transform: uppercase; /* Converts text to uppercase */
+  transition: all 0.2s; /* Adds a transition effect */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+.footer ul li a:hover {
+  color: green; /* Changes the text color on hover */
+  transform: rotateX("angle"); /* Rotates the element on the X-axis */
+}
+
+.detectBody {
+  background-image: url(images/background.jpg); /* Sets the background image */
+  background-position: bottom; /* Positions the background image at the bottom */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-size: cover; /* Covers the entire container with the background image */
+  display: flex; /* Displays the content in a flex container */
+  flex-direction: column; /* Aligns items in a column */
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  padding: 10rem 0; /* Adds padding to the top and bottom */
+}
+
+#camera {
+  display: flex; /* Displays the camera section in a flex container */
+  flex-direction: column; /* Aligns items in a column */
+  margin-bottom: 2rem; /* Adds margin to the bottom */
+  align-items: center; /* Centers items horizontally */
+  gap: 2rem; /* Adds a gap between flex items */
+  width: fit-content; /* Sets the width to fit the content */
+}
+
+#camera button {
+  align-self: stretch; /* Stretches the button to fill the available space */
+}
+
+#camera video {
+  border-radius: 1rem; /* Rounds the corners of the video */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* Adds a shadow to the video */
+}
+
+nav {
+  background-color: #fff; /* Sets the background color */
+  position: sticky; /* Keeps the navigation bar fixed at the top */
+  display: flex; /* Displays the content in a flex container */
+  align-items: center; /* Centers items vertically */
+  gap: 3rem; /* Adds a gap between flex items */
+  font-family: cursive; /* Sets the font family */
+}
+
+.navbar h1 {
+  font-family: cursive; /* Sets the font family */
+  text-align: center; /* Centers the text */
+}
+
+nav h1 {
+  margin: 0 auto 0 0; /* Centers the heading within the navbar */
+}
+
+h1 {
+  color: #0056b3; /* Sets the color of all h1 headings */
+  padding-bottom: 2rem; /* Adds padding to the bottom */
+}
+
+.home {
+  padding: 10rem; /* Adds padding inside the home section */
+  display: flex; /* Displays the content in a flex container */
+  gap: 10rem; /* Adds a gap between flex items */
+}
+
+.home img {
+  width: 100%; /* Sets the image width to 100% */
+  border-radius: 2px; /* Rounds the corners of the image */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+.home h2 {
+  padding-bottom: 2rem; /* Adds padding to the bottom of the heading */
+}
+
+.home p {
+  line-height: 1.5; /* Sets the line height */
+  padding-bottom: 2rem; /* Adds padding to the bottom of the paragraphs */
+}
+
+.text {
+  display: flex; /* Displays the text content in a flex container */
+  flex-direction: column; /* Aligns items in a column */
+  justify-content: center; /* Centers items vertically */
+}
+
+.intro {
+  width: 100%; /* Sets the width to 100% */
+  height: 90vh; /* Sets the height to 90% of the viewport height */
+  background-image: url(./images/speakers.jpeg); /* Sets the background image */
+  background-position: center; /* Centers the background image */
+  background-size: cover; /* Covers the entire container with the background image */
+}
+
+.detectBody h1 {
+  text-align: center; /* Centers the text */
+}
+
+div form {
+  padding: 8rem 0 5rem 0; /* Adds padding inside the form container */
+}
+
+form {
+  margin-bottom: 2rem; /* Adds margin to the bottom of the form */
+  display: flex; /* Displays the form content in a flex container */
+  flex-direction: column; /* Aligns items in a column */
+}
+
+label {
+  display: block; /* Displays the label as a block element */
+  margin-bottom: 5px; /* Adds margin to the bottom of the label */
+  font-size: 1.5em; /* Sets the font size */
+  padding-left: 2rem; /* Adds padding to the left */
+  text-align: center; /* Centers the text */
+  color: #007bff; /* Sets the text color */
+}
+
+input[type="file"] {
+  visibility: hidden; /* Hides the file input */
+}
+
+#imagePreview {
+  width: 20rem; /* Sets the width of the image preview */
+  transition: 0.2s; /* Adds a transition effect */
+}
+
+#imagePreview:hover {
+  padding: 1rem; /* Adds padding inside the image preview */
+  width: 25rem; /* Increases the width on hover */
+  border: 2px solid #0056b3; /* Adds a solid border */
+  border-radius: 0.2rem; /* Rounds the corners of the image preview */
+}
+
+.preview-section {
+  display: flex; /* Displays the preview section in a flex container */
+  flex-direction: column; /* Aligns items in a column */
+  justify-content: center; /* Centers items vertically */
+  align-items: center; /* Centers items horizontally */
+}
+
+.preview-section p {
+  padding-top: 5rem; /* Adds padding to the top of the paragraph */
+  margin: auto 0; /* Centers the paragraph */
+}
+
+button {
+  padding: 1rem 1.5rem; /* Adds padding inside the button */
+  background-color: #007bff; /* Sets the background color */
+  font-size: 1.8rem; /* Sets the font size */
+  letter-spacing: 0.2rem; /* Adds space between letters */
+  border-radius: 3px; /* Rounds the corners of the button */
+  color: white; /* Sets the text color */
+  border: none; /* Removes the border */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+button:hover {
+  background-color: #0056b3; /* Changes the background color on hover */
+}
+
+#result {
+  margin-top: 5rem; /* Adds margin to the top of the result section */
+  font-size: 1.2em; /* Sets the font size */
+  color: #333; /* Sets the text color */
+}
+
+#uploadImage {
+  margin-bottom: 1rem; /* Adds margin to the bottom */
+  padding: 2rem 0; /* Adds padding to the top and bottom */
+  display: inline-block; /* Displays the upload section as an inline block */
+  border: 1px dashed #0056b3; /* Adds a dashed border */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+#uploadImage p {
+  text-align: center; /* Centers the text */
+  padding: 0 2rem; /* Adds padding to the left and right */
+}
+
+#uploadImage:hover {
+  border: 1px dashed darkred; /* Changes the border color on hover */
+}
+
+#uploadImage:hover p {
+  color: orangered; /* Changes the text color on hover */
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column; /* Stacks navbar items vertically */
+    gap: 1rem; /* Reduces the gap between items */
+    padding-left: 2rem; /* Adds padding to the left */
+  }
+
+  .home {
+    flex-direction: column; /* Stacks home section content vertically */
+    padding: 2rem; /* Reduces the padding */
+    gap: 2rem; /* Reduces the gap between items */
+  }
+
+  .cover {
+    padding: 5rem 1rem; /* Reduces the padding */
+  }
+
+  .footer ul {
+    flex-direction: column; /* Stacks footer items vertically */
+    padding-left: 1rem; /* Adds padding to the left */
+    gap: 2rem; /* Increases the gap between items */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column; /* Stacks navbar items vertically */
+    gap: 1rem; /* Reduces the gap between items */
+  }
+
+  .navbar h1 {
+    text-align: center; /* Centers the text */
+    margin: 0; /* Removes the margin */
+  }
+
+  .detectBody {
+    padding: 2rem 1rem; /* Reduces the padding */
+  }
+
+  #camera video {
+    width: 100%; /* Sets the video width to 100% */
+  }
+
+  form {
+    padding: 2rem 0; /* Reduces the padding */
+  }
+
+  button {
+    font-size: 1.4rem; /* Reduces the font size */
+    padding: 0.8rem 1.2rem; /* Reduces the padding */
+  }
+
+  #uploadImage p {
+    font-size: 1.4rem; /* Reduces the font size */
+  }
+}

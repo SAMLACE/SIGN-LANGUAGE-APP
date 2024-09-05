@@ -1,0 +1,88 @@
+   <script>
+        const fileInput = document.getElementById("fileInput");
+        const uploadImage = document.getElementById("uploadImage");
+        const imagePreview = document.getElementById("imagePreview");
+        const fileName = document.getElementById("fileName");
+        const video = document.getElementById("video");
+        const canvas = document.getElementById("canvas");
+        const captureButton = document.getElementById("capture");
+        const capturedImageInput = document.getElementById("capturedImage");
+
+        // Handle file upload and preview
+        uploadImage.addEventListener("click", () => {
+            fileInput.click();
+        });
+        fileInput.addEventListener("change", (e) => {
+            if (e.target.files && e.target.files.length > 0) {
+                selectedFile = e.target.files[0];
+                let selectedImage = URL.createObjectURL(selectedFile);
+                imagePreview.src = selectedImage;
+                fileName.innerText = `${selectedFile.name}`;
+            }
+        });
+
+        // Access the webcam
+        navigator.mediaDevices
+            .getUserMedia({ video: true })
+            .then(function (stream) {
+                video.srcObject = stream;
+            })
+            .catch(function (err) {
+                console.error("Error accessing the camera: ", err);
+            });
+
+        // Capture the image from the video stream
+        captureButton.addEventListener("click", function () {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext("2d").drawImage(video, 0, 0);
+            const dataUrl = canvas.toDataURL("image/jpeg");
+            capturedImageInput.value = dataUrl;
+            imagePreview.src = dataUrl;
+            fileName.innerText = "Captured Image";
+        });
+
+        // Handle form submission
+        document.getElementById("uploadForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData();
+
+            if (fileInput.files.length > 0) {
+                formData.append("file", fileInput.files[0]);
+            } else if (capturedImageInput.value) {
+                formData.append("file", dataURLtoBlob(capturedImageInput.value, "image/jpeg"));
+            } else {
+                document.getElementById("result").innerText = "Please select a file or capture an image.";
+                return;
+            }
+
+            fetch("/predict", {
+                method: "POST",
+                body: formData
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.error) {
+                    document.getElementById("result").innerText = `Error: ${data.error}`;
+                } else {
+                    document.getElementById("result").innerText = `Prediction: ${data.prediction}`;
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+        });
+
+        // Utility function to convert data URL to Blob
+        function dataURLtoBlob(dataurl, mimeType) {
+            const arr = dataurl.split(",");
+            const mime = mimeType || arr[0].match(/:(.*?);/)[1];
+            const bstr = atob(arr[1]);
+            let n = bstr.length;
+            const u8arr = new Uint8Array(n);
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            return new Blob([u8arr], { type: mime });
+        }
+    </script>

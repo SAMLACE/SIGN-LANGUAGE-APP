@@ -1,0 +1,69 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Opens the HTML document and sets the language to English -->
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding of the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configures the viewport for responsive web design -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!-- Links the favicon for the website -->
+    <title>Sign Language Detector</title> <!-- Sets the title of the web page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Links the external CSS stylesheet -->
+</head>
+<body> <!-- Opens the body section of the HTML document -->
+
+    <nav> <!-- Opens the navigation bar section -->
+        <img src="static/images/logo2.jpg" alt="logo"> <!-- Displays an image in the navigation bar -->
+        <h1>Sign Language App</h1> <!-- Adds the main heading in the navigation bar -->
+        <div class="navbar"> <!-- Opens a div for the navigation links -->
+            <ul> <!-- Opens an unordered list for navigation items -->
+                <li><a href="#home">Home</a></li> <!-- List item with a link to the Home section -->
+                <li><a href="#detectBody">Sign Language Detector</a></li> <!-- List item with a link to the Sign Language Detector section -->
+                <li><a href="#footer">Footer</a></li> <!-- List item with a link to the Footer section -->
+            </ul>
+        </div>
+        <img src="static/images/logo.jpg" alt="logo"> <!-- Adds another image in the navigation bar -->
+    </nav> <!-- Closes the navigation bar section -->
+
+    <div class="intro"></div> <!-- Defines an empty div with the class "intro" -->
+
+    <div class="home" id="home"> <!-- Opens a section with the class "home" and ID "home" -->
+        <div> <!-- Opens a div within the home section -->
+            <img src="static/images/download.jpg" alt=""> <!-- Displays an image within this section -->
+        </div>
+        <div class="text"> <!-- Opens a div with the class "text" for textual content -->
+            <h2>Welcome to the Real-Time American Sign Language (ASL) Detection App!</h2> <!-- Adds a heading -->
+            <p>This application leverages advanced machine learning to recognize and interpret ASL signs from a live video feed. Simply point your webcam at your hand showing any ASL sign, and the app will detect and display the sign in real time.</p> <!-- Adds a paragraph describing the app -->
+            <p>We aim to make ASL learning and communication more accessible and interactive for everyone.</p> <!-- Adds another paragraph describing the app's purpose -->
+        </div>
+    </div> <!-- Closes the home section -->
+
+    <div class="home"> <!-- Opens another section with the class "home" -->
+        <div class="text"> <!-- Opens a div with the class "text" for more content -->
+            <h2>Stream Your Sign Language Videos to Our App!</h2> <!-- Adds a heading -->
+            <p>📸 Start a Live Stream with Ease Just one click, and you’re live! Share your sign language with the world instantly, and connect with others in real-time. </p> <!-- Describes live streaming feature -->
+            <p>🤖 Experience Real-Time Video Processing Our advanced technology processes your video as you stream, ensuring that every gesture is recognized quickly and accurately.</p> <!-- Describes real-time video processing feature -->
+            <p>💡 Get Spot-On Predictions of Sign Language Gestures No more guessing! Our app delivers precise predictions of each sign language gesture, helping you communicate with clarity and confidence</p> <!-- Describes prediction accuracy feature -->
+        </div>
+        <div> <!-- Opens a div for another image -->
+            <img src="static/images/download2.jpg" alt=""> <!-- Displays another image within this section -->
+        </div>
+    </div> <!-- Closes the second home section -->
+
+    <div class="navbar"> <!-- Opens another navigation bar section -->
+        <h1>Sign Language Detector</h1> <!-- Adds a heading in this navbar section -->
+    </div>
+
+    <div class="detectBody" id="detectBody"> <!-- Opens the section for the video stream with the ID "detectBody" -->
+        <h1>Video Stream</h1> <!-- Adds a heading for the video stream -->
+        <img src="{{ url_for('video_feed') }}" alt="Video Stream"> <!-- Displays the video stream using Flask's url_for to link the video feed -->
+    </div>
+
+    <div class="footer" id="footer"> <!-- Opens the footer section with the ID "footer" -->
+        <div class="footer-img"> <!-- Opens a div for the footer image -->
+            <img src="static/images/logo2.jpg" alt=""> <!-- Displays an image in the footer -->
+        </div>
+        <div class="copyright"> <!-- Opens a div for the copyright notice -->
+            <p>Copyright &copy; 2024</p> <!-- Displays the copyright information -->
+        </div>
+    </div> <!-- Closes the footer section -->
+
+</body> <!-- Closes the body section -->
+</html> <!-- Closes the HTML document -->
